@@ -1,0 +1,17 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+
+# Large / derived binaries (keep source data tracked; ignore caches)
+*.tmp
+*.log
+
+# Office lock files
+~$*
