@@ -2,13 +2,17 @@
 
 ## 1.1. Version history
 
-| Version number | Changes | Date | Responsible |
-| --- | --- | --- | --- |
-| 0.1 | Initial draft of update protocol (adapted from the mate-choice-copying update protocol template and the parallel `exotic_impact_meta` protocol) | 13 Jul, 2026 | Eduardo S. A. Santos |
-| 0.2 | Reproduce/replicate-then-update design adapted to the absence of open data/code: Q0 reconstructs the dataset from the electronic supplementary material (tables S1/S2) and re-implements the MetaWin/SAS/S-Plus analyses in R (with a ~10% validation re-extraction) rather than re-executing an archive | 13 Jul, 2026 | Eduardo S. A. Santos |
-| 0.3 | Added Q1a (geographic generality / Australia dominance) and Q1b (island vs. mainland) as explicit sub-questions; specified a unified effect-size framework (lnRR/SMD in multilevel `rma.mv`) to replace the split Hedges'-*d* / raw-ratio approach; added study-design and region moderators | 13 Jul, 2026 | Eduardo S. A. Santos |
-| 0.4 | Aligned methods with the `mate_choice_meta` update: explicit effect-size conversion between currencies (with flagging of converted/reconstructed values); concrete predator- and prey-phylogeny workflow (Open Tree of Life) and multilevel random-effect/VCV structure replacing the original's species-averaging; formal reconstruction-validation statistics; a bias-corrected-mean estimation step (two frameworks) and dedicated leave-one-out sensitivity analyses; explicit PRISMA-EcoEvo adherence; strengthened multilingual/grey-literature search; commitment to report deviations from the pre-registration | 14 Jul, 2026 | Eduardo S. A. Santos |
-| 0.5 | Added conceptual/theoretical revisions: reframed the origin contrast as a proxy for evolutionary novelty and added **Q1c**, an a-priori filter-effect test (effect vs. time since establishment); added §2.2 interpretive-scope caveats (transient vs. equilibrium; effect size ≠ extinction risk; origin as proxy; few alien species; naiveté as one mechanism; management-site selection bias); added pre-specified origin-coding rules for range-shifters/subsidised natives, with supporting Table 2 fields and an origin-flag sensitivity analysis | 15 Jul, 2026 | Eduardo S. A. Santos |
+- **Version 0.1** (13 Jul, 2026) — Eduardo S. A. Santos
+  - Initial draft of update protocol (adapted from the mate-choice-copying update protocol template and the parallel `exotic_impact_meta` protocol)
+- **Version 0.2** (13 Jul, 2026) — Eduardo S. A. Santos
+  - Reproduce/replicate-then-update design adapted to the absence of open data/code: Q0 reconstructs the dataset from the electronic supplementary material (tables S1/S2) and re-implements the MetaWin/SAS/S-Plus analyses in R (with a ~10% validation re-extraction) rather than re-executing an archive
+- **Version 0.3** (13 Jul, 2026) — Eduardo S. A. Santos
+  - Added Q1a (geographic generality / Australia dominance) and Q1b (island vs. mainland) as explicit sub-questions; specified a unified effect-size framework (lnRR/SMD in multilevel `rma.mv`) to replace the split Hedges'-_d_ / raw-ratio approach; added study-design and region moderators
+- **Version 0.4** (14 Jul, 2026) — Eduardo S. A. Santos
+  - Aligned methods with the `mate_choice_meta` update: explicit effect-size conversion between currencies (with flagging of converted/reconstructed values); concrete predator- and prey-phylogeny workflow (Open Tree of Life) and multilevel random-effect/VCV structure replacing the original's species-averaging; formal reconstruction-validation statistics; a bias-corrected-mean estimation step (two frameworks) and dedicated leave-one-out sensitivity analyses; explicit PRISMA-EcoEvo adherence; strengthened multilingual/grey-literature search; commitment to report deviations from the pre-registration
+- **Version 0.5** (15 Jul, 2026) — Eduardo S. A. Santos
+  - Added conceptual/theoretical revisions: reframed the origin contrast as a proxy for evolutionary novelty and added **Q1c**, an a-priori filter-effect test (effect vs. time since establishment); added §2.2 interpretive-scope caveats (transient vs. equilibrium; effect size ≠ extinction risk; origin as proxy; few alien species; naiveté as one mechanism; management-site selection bias); added pre-specified origin-coding rules for range-shifters/subsidised natives, with supporting Table 2 fields and an origin-flag sensitivity analysis
+
 
 ## 1.2. Title
 
@@ -17,14 +21,14 @@ meta-analysis.
 
 ## 1.3. Authors
 
-- Eduardo S. A. Santos¹ᵃ, ESAS, orcid: 0000-0002-0434-3655
+- Eduardo S. A. Santos<sup>1a</sup>, ESAS, orcid: 0000-0002-0434-3655
 - [TBD — co-authors to be confirmed]
 
 ## 1.4. Affiliations
 
-a. Department of Biological Sciences, Faculty of Science, University of Alberta, Edmonton, AB, Canada
+<sup>a</sup> Department of Biological Sciences, Faculty of Science, University of Alberta, Edmonton, AB, Canada
 
-¹ Corresponding author: esantos2@ualberta.ca
+<sup>1</sup> Corresponding author: esantos2@ualberta.ca
 
 ## 1.5. CRediT authorship contribution statement
 
@@ -131,7 +135,7 @@ Our specific aim and research questions (Q) are:
     negative-binomial GLM) in R? This provides the baseline against which the update is compared.
   - **Q1 (update):** When we update the synthesis — adding **more sources** (additional databases; broader,
     non-English terms), **new data** (any eligible experiment not represented in the original dataset — both
-    experiments published since the 2006 search *and* older experiments the original missed, e.g. non-English or
+    experiments published since the 2006 search _and_ older experiments the original missed, e.g. non-English or
     grey-literature studies within the pre-2006 window), and **updated methods**
     (a single multilevel model with an explicit taxonomic/phylogenetic random structure, robust variance
     estimation, and modern heterogeneity decomposition) — do the original main findings still hold? That is:
@@ -170,22 +174,22 @@ study (the Q0 baseline) and the update (Q1).
 
 **Table 1. Structured comparison of the original study and the planned update.**
 
-| Elements               | Original (Salo et al. 2007; Q0 baseline)                                                  | Update (Q1)                                                                                                                                     |
-| ---------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Search / data strategy | Web of Science + Biosis Previews + Biological Abstracts; search ended January 2006         | More comprehensive: Web of Science + Scopus + supplementary sources; broader, non-English terms; no date restriction                            |
+| Elements               | Original (Salo et al. 2007; Q0 baseline)                                                   | Update (Q1)                                                                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Search / data strategy | Web of Science + Biosis Previews + Biological Abstracts; search ended January 2006         | More comprehensive: Web of Science + Scopus + supplementary sources; broader, non-English terms; no date restriction                              |
 | Included studies       | 45 replicated + 35 unreplicated experiments (80 total), published 1939–2006                | Original experiments + all newly eligible experiments (post-2006 **and** pre-2006 records the original missed, incl. non-English/grey literature) |
-| Effect-size currency   | Hedges' _d_ (replicated); raw ratio X_e/X_c (unreplicated); negative-binomial GLM (pooled) | Single unified currency (lnRR/SMD) in one multilevel model; study design (replicated vs. unreplicated) as a moderator                           |
-| Analytical models      | MetaWin (Q homogeneity); SAS Satterthwaite _t_-tests; S-Plus `glm.nb`                      | Multilevel `rma.mv` (added taxonomic/phylogenetic + site random effects), robust variance estimation, modern heterogeneity decomposition        |
-| Overall                | Original synthesis                                                                         | One integrated update combining new sources, new data, and updated methods                                                                      |
+| Effect-size currency   | Hedges' _d_ (replicated); raw ratio X_e/X_c (unreplicated); negative-binomial GLM (pooled) | Single unified currency (lnRR/SMD) in one multilevel model; study design (replicated vs. unreplicated) as a moderator                             |
+| Analytical models      | MetaWin (Q homogeneity); SAS Satterthwaite _t_-tests; S-Plus `glm.nb`                      | Multilevel `rma.mv` (added taxonomic/phylogenetic + site random effects), robust variance estimation, modern heterogeneity decomposition          |
+| Overall                | Original synthesis                                                                         | One integrated update combining new sources, new data, and updated methods                                                                        |
 
 ## 2.2. Interpretive scope and a priori caveats
 
-We record the following interpretive commitments *before* seeing the updated results, to constrain how the
+We record the following interpretive commitments _before_ seeing the updated results, to constrain how the
 findings will be read:
 
 - **What the effect size measures.** A predator-manipulation effect size is a **transient response over the
   experiment's duration**, not a new equilibrium density, and it is **not** a direct measure of extinction risk.
-  We will therefore describe results as *suppression of prey demographic rates* and avoid equating a large
+  We will therefore describe results as _suppression of prey demographic rates_ and avoid equating a large
   standardised effect with conservation "danger" or with population regulation (the compensatory-vs-additive
   mortality question the original does not resolve). Experiment **duration** is retained as a moderator partly
   for this reason.
@@ -200,7 +204,7 @@ findings will be read:
   with these data — e.g. release from the predator's own natural enemies (Colautti et al. 2004), subsidy of alien
   predators by alien prey (hyperpredation; Courchamp et al. 2000), and the release of alien mesopredators where
   native apex predators are absent or removed (mesopredator release; Prugh et al. 2009; Ritchie & Johnson 2009;
-  Letnic et al. 2012), which can even make removing a *native* predator increase prey suppression. The Discussion
+  Letnic et al. 2012), which can even make removing a _native_ predator increase prey suppression. The Discussion
   will treat prey naiveté as one hypothesis among several rather than the default.
 - **Selection bias the funnel plots cannot see.** Alien-predator removals are frequently management interventions
   at sites where impact is already suspected, whereas native-predator manipulations are more often basic ecology.
@@ -226,7 +230,7 @@ S2 = 35 unreplicated rows), including the coded study traits and the extracted m
 and (ii) **re-implement** the original analyses in R — the MetaWin categorical/continuous meta-analysis of
 Hedges' _d_ with random effects and 4999-iteration resampling, the Satterthwaite _t_-tests on the unreplicated
 ratios, and the pooled negative-binomial GLM with `stepAIC`/AIC_c model selection — and check that the
-published estimates (e.g. the *Q*_M contrasts, the ~2× alien-vs-native effect, the Australian effect, and the
+published estimates (e.g. the _Q_\_M contrasts, the ~2× alien-vs-native effect, the Australian effect, and the
 GLM deviance results) are recovered. Any discrepancies will be documented. The reproduction provides the
 baseline against which the updated dataset and methods are compared.
 
@@ -249,7 +253,7 @@ predators) or **removal/reduction** (exclosure, culling, or relocation) of avian
 predator is classified as **native or introduced (alien)** following each study's definition, confirmed
 against a standard reference (e.g., Long 2003).
 
-*Classifying origin in ambiguous cases.* Because the native/alien boundary is fuzzier now than in 2007, we
+_Classifying origin in ambiguous cases._ Because the native/alien boundary is fuzzier now than in 2007, we
 pre-specify the following coding rules: (i) a predator **translocated or introduced by humans** beyond its
 historical range is coded **introduced**, even if native to the same country/continent; (ii) a predator that has
 **expanded its range naturally** (e.g. climate-driven) into contact with the focal prey is coded **native** but
@@ -264,7 +268,7 @@ vs. predator-present areas, predator-addition vs. unmanipulated areas, or a befo
 
 **Outcomes:** Quantitative **prey demographic responses**, classified as **population size** (density, minimum
 number known alive, breeding pairs, rate of increase/survival, catch-per-unit-effort) or **reproductive**
-(numbers of juveniles/broods, females with young, survival of young, mean recruitment). *Per capita* measures
+(numbers of juveniles/broods, females with young, survival of young, mean recruitment). _Per capita_ measures
 (e.g. brood size, fledglings per pair) are excluded, as in the original.
 
 **Study design:** Field experiments — **replicated** (≥ 2 control and ≥ 2 treatment units, or a
@@ -317,7 +321,7 @@ the **Bielefeld Academic Search Engine (BASE)** for unpublished theses and grey 
 Scholar** (run with `Publish or Perish`; Harzing 2007, sorted by relevance, records not numerically capped per
 language). We will **not** impose language restrictions: search strings will be **translated** and the results
 screened by **reviewers with expertise in the respective languages**, following the multilingual, grey-literature–
-inclusive strategy used in the parallel `mate_choice_meta` update (where ~45% of newly found studies fell *within*
+inclusive strategy used in the parallel `mate_choice_meta` update (where ~45% of newly found studies fell _within_
 the original search window, confirming the value of this approach for recovering evidence the original missed).
 [Languages and reviewer assignments: TBD.] We will also: (i) screen reference lists and citing articles of the
 original and of key included studies and earlier reviews (backward/forward snowballing; the original mined Côté &
@@ -344,7 +348,7 @@ of earlier reviews (Côté & Sutherland 1997; Newton 1998) and of retrieved pape
 > **Note on the keyword set.** The original reports keyword _combinations_ rather than a single verbatim
 > Boolean string. For the update we will construct explicit, reproducible Boolean strings per database from
 > these terms — a predator/manipulation concept block (`introduced OR alien OR feral OR ... AND predator* OR
-> predation AND experiment* OR manipulat* OR removal OR reduction OR exclos* ...`) crossed with an
+predation AND experiment* OR manipulat* OR removal OR reduction OR exclos* ...`) crossed with an
 > effect/impact block — and broaden the term sets (e.g. add _non-native_, _invasive_, _culling_, _translocation_,
 > prey-response terms), then check relative recall against the benchmark set.
 
@@ -402,7 +406,7 @@ moderator. A pilot screening exercise will estimate inter-reviewer agreement and
 We will extract effect-size data from text, tables, supplementary materials, and figures. Values in figures will
 be digitised with **metaDigitise** (Pick et al. 2019); where an LLM-assisted figure-extraction routine is used to
 speed extraction (as in the parallel `mate_choice_meta` update), its output will be **validated against
-metaDigitise on a subset of ~20 records** and the agreement reported quantitatively (e.g., mean signed *z*-score
+metaDigitise on a subset of ~20 records** and the agreement reported quantitatively (e.g., mean signed _z_-score
 with 95% CI), with the routine adopted only if agreement is acceptable. (The original used data taken from text,
 tables, and figures without a named digitiser.) At least **10%** of newly extracted records will be independently
 and blindly re-extracted by a second reviewer; discrepancies resolved by discussion, and inter-extractor
@@ -425,44 +429,44 @@ handling). Material discrepancies will be documented and, if systematic, will tr
 
 **Table 2. Core data to be extracted from each eligible experiment.**
 
-| Variable                   | Description                                                                                | Data type; options; examples                                                                                      |
-| -------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| identifierExtractor        | Initials of the data extractor                                                             | Restricted; ESAS / …                                                                                              |
-| identifierStudyId          | First author + year + source                                                               | Free text; Salo_2007_ProcRSocB                                                                                    |
-| identifierStudyYear        | Publication year (online if differs from print)                                            | Numeric (4 digits); 2007                                                                                          |
-| identifierStudyDoi         | DOI of the study                                                                           | Free text; 10.1098/rspb.2006.0444                                                                                 |
-| dataProvenance             | New extraction vs. carried over from the original supplementary material                   | Restricted; New / Archived                                                                                        |
-| studyDesign                | Replicated vs. unreplicated design                                                         | Restricted; Replicated / Unreplicated                                                                             |
-| predatorSpecies            | Manipulated predator species (binomial)                                                    | Free text; Vulpes vulpes                                                                                          |
-| predatorOrigin             | Origin of the manipulated predator (per coding rules in §3.3)                              | Restricted; Native / Introduced                                                                                   |
-| predatorOriginFlag         | Ambiguous-origin flag for sensitivity analyses                                             | Restricted; None / Range-shifter / Subsidised                                                                     |
-| predatorEstablishmentYear  | Year the (introduced) predator became established at the study region, if reported         | Numeric (4 digits) or NA                                                                                          |
-| timeSinceEstablishment     | Years from predator establishment to the experiment (for the Q1c filter-effect test)       | Numeric (years) or NA                                                                                             |
-| predatorClass              | Taxonomic class of the predator                                                            | Restricted; Mammal / Bird / Both                                                                                  |
-| preySpecies                | Focal native prey species (binomial) or assemblage                                         | Free text; Petrogale lateralis                                                                                    |
-| preyClass                  | Taxonomic class of the prey                                                                | Restricted; Bird / Mammal                                                                                         |
-| preyType                   | Prey type / group                                                                          | Restricted; Rodent / Ungulate / Marsupial / Waterfowl / Other                                                     |
-| responseType               | Category of prey demographic response                                                      | Restricted; Population size / Reproduction                                                                        |
-| responseMetric             | Specific metric measured                                                                   | Free text; density / breeding pairs / recruitment / …                                                             |
-| manipulationMethod         | Direction of the predator manipulation                                                     | Restricted; Addition / Removal / Both                                                                             |
-| manipulationType           | Enclosure design                                                                           | Restricted; Open area / Predator exclosure                                                                        |
-| locationMainlandIsland     | Location context (Australia classed as mainland, per original)                             | Restricted; Mainland / Island                                                                                     |
-| locationContinent          | Continent / region of the study                                                            | Restricted; Australia / Europe / N. America / … ; plus isAustralia flag                                           |
-| locationLatitude           | Latitude (decimal degrees)                                                                 | Numeric; −33.9                                                                                                    |
-| predatorMeanWeight         | Mean predator body weight                                                                  | Numeric (g or kg; unit recorded)                                                                                  |
-| preyMeanWeight             | Mean prey body weight                                                                      | Numeric (g or kg; unit recorded)                                                                                  |
-| predatorPreyWeightRatio    | Predator/prey weight ratio                                                                 | Numeric                                                                                                           |
-| manipulationArea           | Spatial scale of the manipulation                                                          | Numeric (ha; convert km² → ha)                                                                                    |
-| manipulationDuration       | Temporal scale of the manipulation                                                         | Numeric (months)                                                                                                  |
-| controlMean / treatmentMean| Means of control and predator-manipulated groups                                           | Numeric                                                                                                           |
-| controlSD / treatmentSD    | Dispersion (converted to SD if SE/CL reported; longest bar if asymmetrical)                | Numeric                                                                                                           |
-| controlN / treatmentN      | Number of replicates per group                                                             | Numeric                                                                                                           |
-| effectSizeRatio            | Treatment/control ratio X_e/X_c (unreplicated currency, retained for comparability)        | Numeric                                                                                                           |
-| samplingBasis              | Basis of the recorded value                                                                | Restricted; End-of-experiment / Mean-over-study / Cycle-peak                                                      |
-| effectSizeSourceType       | Where the value was extracted from                                                         | Restricted; Text / Table / Figure / Supplementary                                                                 |
-| effectSizeProvenance       | How the analysis effect size was obtained (for flagging in sensitivity analyses)          | Restricted; Directly calculated / Converted between metrics / Reconstructed from original supplement              |
-| descriptionStudyComplexity | Complexity of extraction (proxy for effort/expertise)                                      | Restricted; Easy / Moderate / Hard                                                                                |
-| descriptionGeneralNote     | Relevant extraction notes                                                                  | Free text                                                                                                         |
+| Variable                    | Description                                                                          | Data type; options; examples                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| identifierExtractor         | Initials of the data extractor                                                       | Restricted; ESAS / …                                                                                 |
+| identifierStudyId           | First author + year + source                                                         | Free text; Salo_2007_ProcRSocB                                                                       |
+| identifierStudyYear         | Publication year (online if differs from print)                                      | Numeric (4 digits); 2007                                                                             |
+| identifierStudyDoi          | DOI of the study                                                                     | Free text; 10.1098/rspb.2006.0444                                                                    |
+| dataProvenance              | New extraction vs. carried over from the original supplementary material             | Restricted; New / Archived                                                                           |
+| studyDesign                 | Replicated vs. unreplicated design                                                   | Restricted; Replicated / Unreplicated                                                                |
+| predatorSpecies             | Manipulated predator species (binomial)                                              | Free text; Vulpes vulpes                                                                             |
+| predatorOrigin              | Origin of the manipulated predator (per coding rules in §3.3)                        | Restricted; Native / Introduced                                                                      |
+| predatorOriginFlag          | Ambiguous-origin flag for sensitivity analyses                                       | Restricted; None / Range-shifter / Subsidised                                                        |
+| predatorEstablishmentYear   | Year the (introduced) predator became established at the study region, if reported   | Numeric (4 digits) or NA                                                                             |
+| timeSinceEstablishment      | Years from predator establishment to the experiment (for the Q1c filter-effect test) | Numeric (years) or NA                                                                                |
+| predatorClass               | Taxonomic class of the predator                                                      | Restricted; Mammal / Bird / Both                                                                     |
+| preySpecies                 | Focal native prey species (binomial) or assemblage                                   | Free text; Petrogale lateralis                                                                       |
+| preyClass                   | Taxonomic class of the prey                                                          | Restricted; Bird / Mammal                                                                            |
+| preyType                    | Prey type / group                                                                    | Restricted; Rodent / Ungulate / Marsupial / Waterfowl / Other                                        |
+| responseType                | Category of prey demographic response                                                | Restricted; Population size / Reproduction                                                           |
+| responseMetric              | Specific metric measured                                                             | Free text; density / breeding pairs / recruitment / …                                                |
+| manipulationMethod          | Direction of the predator manipulation                                               | Restricted; Addition / Removal / Both                                                                |
+| manipulationType            | Enclosure design                                                                     | Restricted; Open area / Predator exclosure                                                           |
+| locationMainlandIsland      | Location context (Australia classed as mainland, per original)                       | Restricted; Mainland / Island                                                                        |
+| locationContinent           | Continent / region of the study                                                      | Restricted; Australia / Europe / N. America / … ; plus isAustralia flag                              |
+| locationLatitude            | Latitude (decimal degrees)                                                           | Numeric; −33.9                                                                                       |
+| predatorMeanWeight          | Mean predator body weight                                                            | Numeric (g or kg; unit recorded)                                                                     |
+| preyMeanWeight              | Mean prey body weight                                                                | Numeric (g or kg; unit recorded)                                                                     |
+| predatorPreyWeightRatio     | Predator/prey weight ratio                                                           | Numeric                                                                                              |
+| manipulationArea            | Spatial scale of the manipulation                                                    | Numeric (ha; convert km² → ha)                                                                       |
+| manipulationDuration        | Temporal scale of the manipulation                                                   | Numeric (months)                                                                                     |
+| controlMean / treatmentMean | Means of control and predator-manipulated groups                                     | Numeric                                                                                              |
+| controlSD / treatmentSD     | Dispersion (converted to SD if SE/CL reported; longest bar if asymmetrical)          | Numeric                                                                                              |
+| controlN / treatmentN       | Number of replicates per group                                                       | Numeric                                                                                              |
+| effectSizeRatio             | Treatment/control ratio X_e/X_c (unreplicated currency, retained for comparability)  | Numeric                                                                                              |
+| samplingBasis               | Basis of the recorded value                                                          | Restricted; End-of-experiment / Mean-over-study / Cycle-peak                                         |
+| effectSizeSourceType        | Where the value was extracted from                                                   | Restricted; Text / Table / Figure / Supplementary                                                    |
+| effectSizeProvenance        | How the analysis effect size was obtained (for flagging in sensitivity analyses)     | Restricted; Directly calculated / Converted between metrics / Reconstructed from original supplement |
+| descriptionStudyComplexity  | Complexity of extraction (proxy for effort/expertise)                                | Restricted; Easy / Moderate / Hard                                                                   |
+| descriptionGeneralNote      | Relevant extraction notes                                                            | Free text                                                                                            |
 
 ## 3.9. Data synthesis
 
@@ -473,42 +477,42 @@ archived with the data (see _Data availability_).
 
 **For Q0 (reproduce/replicate the original):** we re-implement the original analyses on the reconstructed
 dataset. (1) **Replicated experiments:** **Hedges' _d_** with the categorical homogeneity framework (total
-heterogeneity *Q*_T partitioned into *Q*_M and *Q*_E), random-effects models, 4999-iteration resampling, and
+heterogeneity _Q__T partitioned into *Q*\_M and *Q*\_E), random-effects models, 4999-iteration resampling, and
 bias-corrected 95% CIs — reproducing the MetaWin v. 2.1 results, and the weighted-regression tests of *d*
 against spatial/temporal scale. (2) **Unreplicated experiments:** the ratio **X_e/X_c** (ln-transformed) with
-Satterthwaite _t_-tests across study traits, reproducing the SAS results. (3) **Pooled GLM:** a
+Satterthwaite \_t_-tests across study traits, reproducing the SAS results. (3) **Pooled GLM:** a
 **negative-binomial GLM** (log link) of pooled population-size responses with predator origin, manipulation
 type, predator class, and location plus second-order interactions and continuous covariates (weight ratio,
 area, duration), with `stepAIC`/AIC_c model selection and Akaike weights, reproducing the S-Plus results. We
-verify recovery of the published estimates (the *Q*_M contrasts, the ~2× alien effect, the Australian effect,
+verify recovery of the published estimates (the _Q_\_M contrasts, the ~2× alien effect, the Australian effect,
 and the GLM deviance/AIC_c tables).
 
 **For Q1 (the update):** we move to a **single unified effect-size currency** and one **multilevel model**.
 
-*Harmonising the effect-size currencies.* Because the original split its analysis between Hedges' _d_ (replicated)
-and a raw ratio X_e/X_c (unreplicated) — the latter chosen partly to accommodate control means of zero — we will
+_Harmonising the effect-size currencies._ Because the original split its analysis between Hedges' _d_ (replicated)
+and a raw ratio X*e/X_c (unreplicated) — the latter chosen partly to accommodate control means of zero — we will
 adopt a common metric suited to the whole dataset (the **log response ratio, lnRR**, with appropriate handling of
-near-zero controls, or **SMD/Hedges' _g_** where variances allow), computed with `metafor::escalc` (Borenstein et
+near-zero controls, or \*\*SMD/Hedges' \_g*** where variances allow), computed with `metafor::escalc` (Borenstein et
 al. 2009; Viechtbauer 2010). Following the harmonisation strategy of the parallel `mate_choice_meta` update, effect
 sizes reported in one currency will be **converted** to the common metric using the standard analytic conversions
 (and, where only test statistics or ratios are available, reconstructed via standard formulae), with each converted
 or reconstructed value **flagged** (`effectSizeProvenance`) so it can be separated from directly calculated effects
 in sensitivity analyses. This lets the replicated and unreplicated streams — analysed *separately* in the original —
-be combined in one coherent model, with **study design (replicated vs. unreplicated)** entering as a moderator (and,
+be combined in one coherent model, with **study design (replicated vs. unreplicated)\*\* entering as a moderator (and,
 in sensitivity analyses, as a subset filter).
 
-*Model structure.* We will fit **multilevel `rma.mv` models** (metafor; Viechtbauer 2010) with crossed/nested random
+_Model structure._ We will fit **multilevel `rma.mv` models** (metafor; Viechtbauer 2010) with crossed/nested random
 effects for **study ID**, **effect-size (observation) ID**, **predator species** and **prey species** (each with a
 non-phylogenetic and a phylogenetic component; see below), and **site/location**. Non-independence among effect sizes
 that share a study or a common control (e.g. one control contrasted with several treatments, or several prey species
 scored in one study) will be modelled with a **variance–covariance matrix** (assuming a within-cluster correlation
-of *r* = 0.5), and inference will use **cluster-robust (RVE/CR2) confidence intervals** (Pustejovsky & Tipton 2022).
+of _r_ = 0.5), and inference will use **cluster-robust (RVE/CR2) confidence intervals** (Pustejovsky & Tipton 2022).
 This VCV approach **replaces the original's crude averaging** of multiple prey species to one effect per study,
 retaining the within-study information while respecting the dependence. Heterogeneity will be decomposed as total and
 **partial I² per random factor** (`orchaRd::i2_ml`; Nakagawa et al. 2023; Yang et al. 2025), and results visualised
 with **orchard** and **bubble** plots (`orchaRd::orchard_plot`, `orchaRd::bubble_plot`).
 
-*Moderators.* We retain the original moderators — **predator origin**, **location**, **predator class**,
+_Moderators._ We retain the original moderators — **predator origin**, **location**, **predator class**,
 **manipulation type**, **predator/prey weight ratio**, **manipulation area**, **manipulation duration** — for
 comparability, and extend them where new data permit. Retaining the original specification (re-implemented for Q0)
 alongside the updated one lets us attribute changes from the Q0 baseline to the new data versus the new methods.
