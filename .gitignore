@@ -15,3 +15,10 @@ Thumbs.db
 
 # Office lock files
 ~$*
+
+# Quarto / pandoc render artifacts (regenerate from the .md + .bib)
+.quarto/
+_freeze/
+protocol/*_files/
+protocol/*.html
+protocol/*.pdf

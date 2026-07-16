@@ -9,7 +9,7 @@ Royal Society B 274:1237–1243, doi:10.1098/rspb.2006.0444).
 | Folder            | Contents                                                                 |
 |-------------------|--------------------------------------------------------------------------|
 | `protocol/`       | Review/meta-analysis protocol and the summary of the original study.     |
-| `references/`     | Bibliography, PDFs of included/screened studies, reference-manager files. |
+| `references/`     | Bibliography (`alien_predator_meta.bib`, Zotero/Better BibTeX), PDFs, and `README_zotero.md`. |
 | `data/input/`     | Raw / source datasets (treated as read-only).                            |
 | `data/output/`    | Processed datasets, effect-size tables, derived results.                 |
 | `analysis/`       | Analysis scripts (R), notebooks, and code.                               |
@@ -37,6 +37,14 @@ tables S1 and S2; https://dx.doi.org/10.1098/rspb.2006.0444). The reproduction s
 **reconstructs** the analysis dataset from that supplementary material and **re-implements** the original
 analyses (originally run in MetaWin 2.1, SAS 9.1, and S-Plus 6) in R before updating — rather than
 re-executing archived data and code, which are not available.
+
+## References
+
+Citations are managed in **Zotero** with the **Better BibTeX** extension, auto-exported to
+[`references/alien_predator_meta.bib`](references/alien_predator_meta.bib). The protocol cites with
+Pandoc `[@key]` syntax and generates its reference list on render — do not edit the `.bib` or the
+list by hand. Setup and rendering instructions are in
+[`references/README_zotero.md`](references/README_zotero.md).
 
 ## Conventions
 
